@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: ghostrex-ai
+    env: node
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    envVars:
+      - key: DEEPSEEK_API_KEY
+        sync: false  # Isi manual di dashboard Render (aman)
