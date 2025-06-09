@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const API_KEY = process.env.DEEPSEEK_API_KEY;
+const API_KEY = process.env.GHOSTREX_API_KEY;  // rename ENV variable juga
 
 app.use(cors());
 app.use(express.json());
@@ -16,7 +16,7 @@ app.post("/api/chat", async (req, res) => {
   const userMessage = req.body.message;
 
   try {
-    const response = await fetch("https://api.deepseek.com/chat/completions", {
+    const response = await fetch("https://api.deepseek.com/chat/completions", { // endpoint asli tetap
       method: "POST",
       headers: {
         "Authorization": `Bearer ${API_KEY}`,
